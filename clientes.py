@@ -1,3 +1,5 @@
+clientes = []
+
 def menu_clientes():
         while True:
             print("=" * 20)
