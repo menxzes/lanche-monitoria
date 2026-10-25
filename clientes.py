@@ -1,4 +1,19 @@
+from utilidades import *
+
 clientes = []
+
+def cadastrar_cliente(nome, idade):
+    cliente_id = gerar_id_hex()
+
+    novo_cliente = {
+        "id": cliente_id,
+        "nome": nome,
+        "idade": idade
+    }
+
+    clientes.append(novo_cliente)
+
+    return True, "Cliente cadastrado com sucesso!"
 
 def menu_clientes():
         while True:
