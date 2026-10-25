@@ -1,3 +1,6 @@
+import secrets
+from clientes import clientes
+
 def normalizar_texto(texto):
     texto = texto.strip()
     texto = texto.casefold()
@@ -7,15 +10,27 @@ def normalizar_texto(texto):
 
     return texto_normalizado
 
+def gerar_id_hex() -> str:
+      id_existentes = {c[id] for c in clientes}
+
+      while True:
+          novo_id = secrets.token_hex(3).upper()
+          if novo_id not in id_existentes:
+              return novo_id
+
 def capturar_dados_cliente():
     nome = input("Digite seu nome: ")
     idade = int(input("Insira sua idade: "))
+    nome_normalizado = normalizar_texto(nome)
+
+    if nome == "":
+        print("Nome vazio.")
+        return
 
     if idade < 18:
         print("Idade insuficiente.")
         return
 
-    nome_normalizado = normalizar_texto(nome)
     nome = nome_normalizado
 
     return nome, idade
