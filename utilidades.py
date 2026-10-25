@@ -19,18 +19,15 @@ def gerar_id_uuid_cliente() -> str:
               return novo_id
 
 def capturar_dados_cliente():
-    nome = input("Digite seu nome: ")
+    nome = normalizar_texto(input("Digite seu nome: "))
     idade = int(input("Insira sua idade: "))
-    nome_normalizado = normalizar_texto(nome)
 
     if nome == "":
         print("Nome vazio.")
-        return
+        return None
 
     if idade < 18:
         print("Idade insuficiente.")
-        return
-
-    nome = nome_normalizado
+        return None
 
     return nome, idade
