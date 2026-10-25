@@ -15,6 +15,15 @@ def cadastrar_cliente(nome, idade):
 
     return True, "Cliente cadastrado com sucesso!"
 
+def executar_cadastro():
+    resultado = capturar_dados_cliente()
+
+    nome, idade = resultado
+
+    sucesso, mensagem = cadastrar_cliente(nome, idade)
+
+    print(f"Status: {sucesso}; {mensagem}")
+
 def menu_clientes():
         while True:
             print("=" * 20)
