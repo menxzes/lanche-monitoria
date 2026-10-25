@@ -1,4 +1,4 @@
-import secrets
+import uuid
 from clientes import clientes
 
 def normalizar_texto(texto):
@@ -10,11 +10,11 @@ def normalizar_texto(texto):
 
     return texto_normalizado
 
-def gerar_id_hex() -> str:
-      id_existentes = {c[id] for c in clientes}
+def gerar_id_uuid() -> str:
+      id_existentes = {c["id"] for c in clientes}
 
       while True:
-          novo_id = secrets.token_hex(3).upper()
+          novo_id = uuid.uuid4().hex.upper()
           if novo_id not in id_existentes:
               return novo_id
 
