@@ -10,7 +10,7 @@ def normalizar_texto(texto):
 
     return texto_normalizado
 
-def gerar_id_uuid() -> str:
+def gerar_id_uuid_cliente() -> str:
       id_existentes = {c["id"] for c in clientes}
 
       while True:

@@ -3,7 +3,7 @@ from utilidades import *
 clientes = []
 
 def cadastrar_cliente(nome, idade):
-    cliente_id = gerar_id_uuid()
+    cliente_id = gerar_id_uuid_cliente()
 
     novo_cliente = {
         "id": cliente_id,
