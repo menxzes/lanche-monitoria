@@ -17,6 +17,8 @@ def cadastrar_cliente(nome, idade):
 
 def executar_cadastro():
     resultado = capturar_dados_cliente()
+    if resultado is None:
+        return
 
     nome, idade = resultado
 
@@ -38,7 +40,7 @@ def menu_clientes():
             opcao = input("Escolha uma opção: ")
 
             if opcao == "1":
-                print("Cadastro")
+                executar_cadastro()
             elif opcao == "2":
                 print("Lista")
             elif opcao == "3":
