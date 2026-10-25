@@ -2,6 +2,14 @@ from utilidades import *
 
 clientes = []
 
+def gerar_id_uuid_cliente() -> str:
+    id_existentes = {c["id"] for c in clientes}
+
+    while True:
+        novo_id = uuid.uuid4().hex.upper()
+        if novo_id not in id_existentes:
+            return novo_id
+
 def cadastrar_cliente(nome, idade):
     cliente_id = gerar_id_uuid_cliente()
 
@@ -42,7 +50,7 @@ def menu_clientes():
             if opcao == "1":
                 executar_cadastro()
             elif opcao == "2":
-                print("Lista")
+                print(clientes)
             elif opcao == "3":
                 print("Atualizarção")
             elif opcao == "4":
