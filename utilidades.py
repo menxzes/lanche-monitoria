@@ -26,3 +26,10 @@ def capturar_dados_cliente():
         return None
 
     return nome, idade, cpf
+
+def capturar_cpf():
+    cpf = input("Informe seu CPF (sem pontos e hífen): ")
+    if len(cpf) < 11:
+        return None
+
+    return cpf
