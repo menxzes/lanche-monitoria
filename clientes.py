@@ -2,6 +2,8 @@ from utilidades import *
 
 clientes = []
 
+# FUNÇÕES AUXILIARES
+
 def gerar_id_uuid_cliente() -> str:
     id_existentes = {c["id"] for c in clientes}
 
@@ -9,6 +11,8 @@ def gerar_id_uuid_cliente() -> str:
         novo_id = uuid.uuid4().hex.upper()
         if novo_id not in id_existentes:
             return novo_id
+
+# CRUD: CADASTRO
 
 def cadastrar_cliente(nome, idade):
     cliente_id = gerar_id_uuid_cliente()
