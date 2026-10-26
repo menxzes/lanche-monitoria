@@ -14,13 +14,14 @@ def gerar_id_uuid_cliente() -> str:
 
 # CRUD: CADASTRO
 
-def cadastrar_cliente(nome, idade):
+def cadastrar_cliente(nome, idade, cpf):
     cliente_id = gerar_id_uuid_cliente()
 
     novo_cliente = {
         "id": cliente_id,
         "nome": nome,
-        "idade": idade
+        "idade": idade,
+        "cpf": cpf
     }
 
     clientes.append(novo_cliente)
@@ -32,9 +33,9 @@ def executar_cadastro():
     if resultado is None:
         return
 
-    nome, idade = resultado
+    nome, idade, cpf = resultado
 
-    sucesso, mensagem = cadastrar_cliente(nome, idade)
+    sucesso, mensagem = cadastrar_cliente(nome, idade, cpf)
 
     print(f"Status: {sucesso}; {mensagem}")
 

@@ -12,6 +12,7 @@ def normalizar_texto(texto):
 def capturar_dados_cliente():
     nome = normalizar_texto(input("Digite seu nome: "))
     idade = int(input("Insira sua idade: "))
+    cpf = input("Informe seu CPF (sem pontos e hífen): ")
 
     if nome == "":
         print("Nome vazio.")
@@ -21,4 +22,7 @@ def capturar_dados_cliente():
         print("Idade insuficiente.")
         return None
 
-    return nome, idade
+    if len(cpf) < 11:
+        return None
+
+    return nome, idade, cpf
