@@ -53,8 +53,25 @@ def listar_clientes(clientes):
 def buscar_cliente_cpf(cpf, clientes):
     for cliente in clientes:
         if cliente['cpf'] == cpf:
-            return cliente
+            return True, cliente
     return None
+
+def executar_busca_cliente_cpf():
+    resultado = capturar_cpf()
+    if resultado is None:
+        return
+
+    cpf = resultado
+
+    cliente = buscar_cliente_cpf(cpf, clientes)
+    if cliente is None:
+        sucesso = False
+        mensagem = "Cliente não encontrado."
+    else:
+        sucesso = True
+        mensagem = f"Cliente encontrado: {cliente}"
+
+    print(f"Status: {sucesso}; {mensagem}")
 
 def menu_clientes():
         while True:
