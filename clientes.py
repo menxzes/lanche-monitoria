@@ -46,6 +46,7 @@ def listar_clientes(clientes):
         print("Lista vazia. Nenhum cliente cadastrado")
         return
     print(f"{'CPF':<14} | {'NOME':<25} | {'IDADE':<5}")
+    print("-" * 50)
     for cliente in clientes:
         print(f"{cliente['cpf']:<14} | {cliente['nome']:<25} | {cliente['idade']:<5}")
 
