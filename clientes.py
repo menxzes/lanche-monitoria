@@ -43,7 +43,8 @@ def executar_cadastro():
 
 def listar_clientes(clientes):
     if not clientes:
-        return "Lista vazia. Nenhum cliente cadastrado"
+        print("Lista vazia. Nenhum cliente cadastrado")
+        return
     print(f"{'CPF':<14} | {'NOME':<25} | {'IDADE':<5}")
     for cliente in clientes:
         print(f"{cliente['cpf']:<14} | {cliente['nome']:<25} | {cliente['idade']:<5}")
