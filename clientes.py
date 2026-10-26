@@ -39,6 +39,12 @@ def executar_cadastro():
 
     print(f"Status: {sucesso}; {mensagem}")
 
+# CRUD: LISTAGEM E BUSCA
+
+def listar_clientes(clientes):
+    for cliente in clientes:
+        print(f"{cliente['cpf']:<14} | {cliente['nome']:<25} | {cliente['idade']:<5}")
+
 def menu_clientes():
         while True:
             print("=" * 20)
@@ -55,7 +61,7 @@ def menu_clientes():
             if opcao == "1":
                 executar_cadastro()
             elif opcao == "2":
-                print(clientes)
+                listar_clientes(clientes)
             elif opcao == "3":
                 print("Atualizarção")
             elif opcao == "4":
