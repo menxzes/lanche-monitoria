@@ -50,6 +50,12 @@ def listar_clientes(clientes):
     for cliente in clientes:
         print(f"{cliente['cpf']:<14} | {cliente['nome']:<25} | {cliente['idade']:<5}")
 
+def buscar_cliente_cpf(cpf, clientes):
+    for cliente in clientes:
+        if cliente['cpf'] == cpf:
+            return cliente
+    return None
+
 def menu_clientes():
         while True:
             print("=" * 20)
